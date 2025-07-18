@@ -1,1 +1,229 @@
 <meta name="google-site-verification" content="abc123XYZ456" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CelularShopMX</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1041/1041916.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fff5e1, #ffd4ca);
+      color: #333333;
+      overflow-x: hidden;
+      animation: fondoAnimado 15s infinite alternate;
+    }
+    @keyframes fondoAnimado {
+      0% { background-position: left top; }
+      100% { background-position: right bottom; }
+    }
+    header {
+      background-color: #ff6f61;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .logo img {
+      height: 40px;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fbc02d;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #ff6f61;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    .hero {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(to right, #ffb347, #ff6f61);
+      color: white;
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .productos, .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .producto, .imagen-galeria {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .producto:hover, .imagen-galeria:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .producto img, .imagen-galeria img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    .social-icons {
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Logo CelularShopMX" />
+      CelularShopMX
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav-menu">
+      <a onclick="scrollToSection('inicio')">Inicio</a>
+      <a onclick="scrollToSection('productos')">Productos</a>
+      <a onclick="scrollToSection('galeria')">Galería</a>
+      <a onclick="scrollToSection('contacto')">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>¡Bienvenido a CelularShopMX!</h1>
+    <p>Accesorios modernos, potentes y elegantes para tu celular.</p>
+  </section>
+
+  <section class="productos" id="productos">
+    <a class="producto" href="https://www.google.com/search?q=cargadores+celular&tbm=isch" target="_blank">
+      <img src="https://i.ibb.co/zTSGSVN9/17528561750337429566886027025292.jpg" alt="Cargador rápido">
+      <h3>Cargador Rápido</h3>
+      <p>Potencia y eficiencia para tu día.</p>
+    </a>
+    <a class="producto" href="https://www.google.com/search?q=cables+usb+celular&tbm=isch" target="_blank">
+      <img src="https://i.ibb.co/twQNmD3D/17528563922154697308987323019158.jpg" alt="Cable de carga rápida">
+      <h3>Cable de Carga Rápida</h3>
+      <p>Transfiere y carga sin perder tiempo.</p>
+    </a>
+    <a class="producto" href="https://www.google.com/search?q=audifonos+con+cable&tbm=isch" target="_blank">
+      <img src="https://i.ibb.co/fYNqzgvW/17528564863372635956650261360275.jpg" alt="Audífonos con Cable">
+      <h3>Audífonos con Cable</h3>
+      <p>Calidad de sonido, estilo clásico.</p>
+    </a>
+  </section>
+
+  <section class="galeria" id="galeria">
+    <a class="imagen-galeria" href="https://www.google.com/search?q=cargadores+celular&tbm=isch" target="_blank">
+      <img src="https://i.ibb.co/zTSGSVN9/17528561750337429566886027025292.jpg" alt="Cargador 1">
+    </a>
+    <a class="imagen-galeria" href="https://www.google.com/search?q=cables+usb+celular&tbm=isch" target="_blank">
+      <img src="https://i.ibb.co/twQNmD3D/17528563922154697308987323019158.jpg" alt="Cable 1">
+    </a>
+    <a class="imagen-galeria" href="https://www.google.com/search?q=audifonos+con+cable&tbm=isch" target="_blank">
+      <img src="https://i.ibb.co/fYNqzgvW/17528564863372635956650261360275.jpg" alt="Audífonos">
+    </a>
+  </section>
+
+  <footer id="contacto">
+    <p>Contáctanos al <strong>+52 55 1234 5678</strong> o síguenos en nuestras redes sociales:</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/CelularShopMX" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/CelularShopMX" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/525512345678" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+    </div>
+    <div style="margin-top: 2rem;">
+      <button onclick="mostrarQR()" style="padding: 10px 20px; font-size: 1rem; border: none; background-color: #fbc02d; color: white; border-radius: 8px; cursor: pointer;">
+        Compartir vía QR
+      </button>
+      <div id="qr-contenedor" style="display: none; margin-top: 1rem;">
+        <img id="codigoQR" src="" alt="Código QR para compartir" style="width: 150px; height: 150px;" />
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-menu");
+      nav.classList.toggle("active");
+    }
+
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function mostrarQR() {
+      const contenedorQR = document.getElementById("qr-contenedor");
+      const imgQR = document.getElementById("codigoQR");
+      const miURL = window.location.href;
+      imgQR.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(miURL)}&size=150x150`;
+      contenedorQR.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+
